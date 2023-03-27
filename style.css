@@ -78,3 +78,12 @@ article a:hover {
 code {
     white-space: pre;
 }
+@media screen and (max-width: 481px){
+	article {
+		width: 90%;
+		margin-left: 10px;
+		margin-top: 3em;
+		margin-bottom: 3em;
+		padding: 5px;
+	}
+}

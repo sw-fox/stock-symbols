@@ -1,8 +1,82 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title>Title</title>
+    <title>sw-fox / stock-symbols</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    hello World
+    <header>
+	  <ul>
+		  <li><a href="#about">About</a></li>
+		  <li><a href="#example">Examples</a></li>
+		  <li><a href="#github">Github</a></li>
+	  </ul> 
+	</header>
+	<div class="line1">
+	</div>
+	<div class="line2">
+	</div>
+	<article id="about">
+	<h1>Stock symbols</h1>
+	If you want to use a stock library like <a href="https://github.com/sstrickx/yahoofinance-api">this</a> to work with some data. It may be a difficulty that in europe the ISIN is a more common identifier than the symbols used by the library.
+	<br/>
+	To solve this I have collected a list of about 5k symbols and mapped them to companies and their ISIN. All in a simple parseable json.
+	<br/>
+	<a href="https://github.com/sw-fox/stock-symbols/blob/main/companies.json">Link to json</a>
+	<br/>
+	</article>
+	<article id="example">
+	<h1>Example</h1>
+	the following is an example how the json structure looks like.
+	<br/>
+	There is some base info like the name and the location of the company, also there are some tags which industry the company is working in.
+	<br/>
+	The ISIN is an array, because there are some companies with multiple stock options and therefore multiple ISIN numbers.
+	<br/>
+	Also there is a list which indices contain this stock
+	<br/>
+	And finaly there is a list of symbols for the stock with the additional info of the currency and the exchange where the symbol belongs to.
+	<br/>
+	<code>
+[
+  {
+    "name": "adidas AG",
+    "country": "Germany",
+    "industries": [
+      "Sportswear",
+	  ...
+    ],
+    "isins": [
+      "DE000A1EWWW0"
+    ],
+    "indices": [
+      "DAX",
+      "EURO STOXX 50"
+    ],
+    "symbols": [
+      {
+        "yahooSymbol": "ADS.F",
+        "currency": "EUR",
+        "exchange": "Frankfurt"
+      },
+      {
+        "yahooSymbol": "ADS.DE",
+        "currency": "EUR",
+        "exchange": "XETRA"
+      },
+	  ...
+    ]
+  },
+...
+]
+	</code>
+	</article>
+	<article id="github">
+	<h1>Github</h1>
+	<br/>
+	<img class="logo" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="octocat"/>
+	<br/>
+	<a href="https://github.com/sw-fox/stock-symbols">Github Repository</a>
+	</article>
   </body>
 </html>
